@@ -1,0 +1,41 @@
+body {
+    padding-top: 65px;
+    overflow: hidden;
+
+}
+.blue-navbar {
+    background-color: #337ab7;
+}
+.white-navbar-text {
+    color: white !important;
+}
+/*.navbar-inverse {
+    background-color: #4169E1;
+}*/
+.navbar-default .navbar-brand {
+    color: black;
+}
+.navbar-default .navbar-text {
+    color: black;
+}
+
+.borderless {
+    border: none;
+}
+
+.no-padding {
+    padding: 5px;
+}
+
+.widget-tool {
+    position: absolute;
+    right: 5px;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 8px;
+}
+.error-style {
+    margin-top: 5px;
+    padding: 10px;
+}
