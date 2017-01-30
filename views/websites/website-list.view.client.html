@@ -20,7 +20,7 @@
 <div class="row container-fluid">
     <ul class="list-group">
         <li ng-repeat="website in model.websites" class="list-group-item borderless">
-            <a href="#/page-list">
+            <a href="#/user/{{model.user._id}}/website/{{website._id}}/page">
                 {{website.name}}
             </a>
             <a href="#/user/{{model.user._id}}/website/{{website._id}}" class="pull-right">
@@ -28,6 +28,9 @@
             </a>
         </li>
     </ul>
+
+    <div ng-show="model.error" class="alert alert-danger error-style" role="alert">{{model.error}}</div>
+
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom blue-navbar">
     <div class="container-fluid">

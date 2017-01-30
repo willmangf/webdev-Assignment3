@@ -47,7 +47,7 @@
         <ul class="list-group">
             <li ng-repeat="website in model.websites" class="list-group-item borderless">
                 <a ng-click="model.update()"
-                   href="#/page-list">
+                   href="#/user/{{model.user._id}}/website/{{website._id}}/page">
                     {{website.name}}
                 </a>
                 <a ng-click="model.update()"

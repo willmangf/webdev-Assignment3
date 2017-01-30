@@ -19,6 +19,7 @@
         var api = {
             findWebsitesForUser: findWebsitesForUser,
             findWebsiteById: findWebsiteById,
+            findWebsiteByName: findWebsiteByName,
             updateWebsite: updateWebsite,
             createWebsite: createWebsite,
             createEmptyWebsite: createEmptyWebsite,
@@ -40,6 +41,15 @@
             for(var w in websites) {
                 var website = websites[w];
                 if(website._id === websiteId) {
+                    return website;
+                }
+            }
+            return null;
+        }
+        function findWebsiteByName(websiteName) {
+            for(var w in websites) {
+                var website = websites[w];
+                if(website.name === websiteName) {
                     return website;
                 }
             }

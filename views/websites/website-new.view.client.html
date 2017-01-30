@@ -9,7 +9,7 @@
             </div>
             <div>
                 <a ng-click="model.create()"
-                href="#/user/{{model.user._id}}/website" class="navbar-text pull-right white-navbar-text">
+                   href="#/user/{{model.user._id}}/website" class="navbar-text pull-right white-navbar-text">
                     <span class="glyphicon glyphicon-ok"></span>
                 </a>
             </div>
@@ -24,7 +24,7 @@
         <div class="container-fluid">
             <div>
                 <a ng-click="model.create()"
-                   href="#/user/{{model.user._id}}/website-new" class="navbar-text pull-left white-navbar-text">
+                   href="#/user/{{model.user._id}}/website" class="navbar-text pull-left white-navbar-text">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
@@ -67,6 +67,9 @@
                 <textarea class="form-control" ng-model="model.website.description" rows="3" id="description" placeholder="Description"></textarea>
             </div>
         </form>
+
+        <div ng-show="model.error" class="alert alert-danger error-style" role="alert">{{model.error}}</div>
+
     </div>
 </div>
 <nav class="navbar navbar-default navbar-fixed-bottom blue-navbar">

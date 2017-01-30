@@ -38,15 +38,20 @@ angular
                 controller: "WebsiteEditController",
                 controllerAs: "model"
             })
-            .when("/page-list", {
+            .when("/user/:uid/website/:wid/page", {
                 templateUrl: "views/pages/page-list.view.client.html",
-                controller: "PageListController"
+                controller: "PageListController",
+                controllerAs: "model"
             })
-            .when("/page-new", {
-                templateUrl: "views/pages/page-new.view.client.html"
+            .when("/user/:uid/website/:wid/page/new", {
+                templateUrl: "views/pages/page-new.view.client.html",
+                controller: "PageNewController",
+                controllerAs: "model"
             })
-            .when("/page-edit", {
-                templateUrl: "views/pages/page-edit.view.client.html"
+            .when("/user/:uid/website/:wid/page/:pid", {
+                templateUrl: "views/pages/page-edit.view.client.html",
+                controller: "PageEditController",
+                controllerAs: "model"
             })
             .when("/widget-chooser", {
                 templateUrl: "views/widgets/widget-chooser.view.client.html"

@@ -6,15 +6,35 @@
         .module("WebAppMaker")
         .controller("PageListController", PageListController);
 
-    function PageListController($scope) {
+    function PageListController($routeParams, UserService, WebsiteService, PageService) {
 
-        var pages = [
-            { "_id": "321", "name": "Post 1", "websiteId": "456", "description": "Lorem" },
-            { "_id": "432", "name": "Post 2", "websiteId": "456", "description": "Lorem" },
-            { "_id": "543", "name": "Post 3", "websiteId": "456", "description": "Lorem" }
-        ]
-        $scope.pages = pages;
+        var vm = this;
+        vm.error = null;
 
-        console.log("at the PageListController");
+        var userId = parseInt($routeParams["uid"]);
+        if (userId == null) {
+            vm.error = "User Not Found"
+        } else {
+            var user = UserService.findUserById(userId);
+            if (user == null) {
+                vm.error = "User Not Found";
+            } else {
+                vm.user = user;
+                var websiteId = parseInt($routeParams["wid"]);
+                if (websiteId == null) {
+                    vm.error = "Website Not Found";
+                } else {
+                    var website = WebsiteService.findWebsiteById(websiteId);
+                    if (website == null) {
+                        vm.error = "Website Not Found";
+                    } else {
+                        vm.website = website;
+                        var pages = PageService.findPagesByWebsiteId(websiteId);
+                        vm.pages = pages;
+                    }
+                }
+
+            }
+        }
     }
 })();
